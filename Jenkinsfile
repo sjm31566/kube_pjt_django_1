@@ -1,5 +1,3 @@
-backup
-
 pipeline {
     agent any
 
