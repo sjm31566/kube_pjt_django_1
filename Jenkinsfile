@@ -65,9 +65,9 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]){
                       sh """
-                      rm -rf k8s-manifests || true
+                      rm -rf kube_pjt_yaml1 || true
                       git clone https://github.com/sjm31566/kube_pjt_yaml1.git
-                      cd k8s-manifests/app
+                      cd kube_pjt_yaml1/app
 
                       # 이미지 태그 자동 교체 (django-deployment.yaml)
                       sed -i 's#image: sjm31566/djangoapp:.*#image: ${IMAGE_TAG}#g' django-deployment.yaml
