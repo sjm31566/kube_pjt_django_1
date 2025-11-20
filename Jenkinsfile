@@ -66,7 +66,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]){
                       sh """
                       rm -rf kube_pjt_yaml1 || true
-                      git clone https://github.com/sjm31566/kube_pjt_yaml1.git
+                      git clone -b master https://github.com/sjm31566/kube_pjt_yaml1.git
                       cd kube_pjt_yaml1/app
 
                       # 이미지 태그 자동 교체 (django-deployment.yaml)
