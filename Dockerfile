@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 소스 복사
 COPY . /app/
 # Django 설정
-WORKDIR /app/mysite
+WORKDIR /app/
 RUN python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
 EXPOSE 8000
