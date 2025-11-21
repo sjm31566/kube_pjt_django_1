@@ -25,7 +25,7 @@ pipeline {
                     // Jenkins 빌드번호 기반 버전
                     VERSION = "v${BUILD_NUMBER}"
                     //IMAGE_TAG = "${DOCKERHUB_REPO}:${VERSION}"
-                    IMAGE_TAG = "latest"
+                    IMAGE_TAG = "${DOCKERHUB_REPO}:latest"
 
                     echo "새 Docker 이미지 버전: ${IMAGE_TAG}"
                 }
